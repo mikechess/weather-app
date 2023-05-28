@@ -15,7 +15,7 @@ const fetchWeatherData = async (city: string) : Promise<{currentWeather: Current
     const forecastForecast = await fetch((`${baseUrl}/forecast?q=${city}&units=metric&appid=${apiKey}`))
     const forecastData = await forecastForecast.json()
 
-    if(forecastData.cod !== 200) {
+    if(forecastData.cod !== "200") {
         throw new Error(currentWeatherData.message)
     }
 
